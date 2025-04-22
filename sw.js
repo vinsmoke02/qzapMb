@@ -1,8 +1,14 @@
-// sw.js
-self.addEventListener("install", e => {
+self.addEventListener("install", (e) => {
     e.waitUntil(
-      caches.open("quiz-cache").then(cache => {
-        return cache.addAll(["/", "/index.html", "/style.css", "/script.js"]);
+      caches.open("quiz-cache").then((cache) => {
+        return cache.addAll([
+          "/",
+          "/index.html",
+          "/style.css",
+          "/script.js",
+          "/manifest.json",
+          "/icon.png"
+        ]);
       })
     );
   });
